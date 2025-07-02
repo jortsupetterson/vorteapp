@@ -1,0 +1,7 @@
+@media (hover: hover) and (pointer: fine) {
+  summary,
+  [role="button"]:hover,
+  [role="button"]:focus {
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,26 @@
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--pad3);
+}
+
+a {
+  color: var(--text);
+}
+
+summary {
+  list-style: none;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary::-moz-list-bullet {
+  display: none;
+}
+
+summary::marker {
+  content: none;
+}
