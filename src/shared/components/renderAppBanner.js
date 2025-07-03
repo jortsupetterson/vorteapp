@@ -24,22 +24,22 @@ export default function renderAppBanner(lang, title) {
 
           <menu-item 
           role="button"
-          title="${texts}"
-          >Install Vorte to your device</menu-item>
+          title="${texts.menuItems[0].title[lang]}"
+          >${texts.menuItems[0].main[lang]}</menu-item>
 
-        <menu-heading>${texts.menuHeading[lang]}</menu-heading>
+        <menu-heading>MY VORTE</menu-heading>
 
         <a
-          href="/en/control-panel"
-          hreflang="en"
-          title="Navigate to My Vorte control panel"
+          href="${texts.menuItems[1].href[lang]}"
+          hreflang="${texts.menuItems[1].hreflang[lang]}"
+          title="${texts.menuItems[1].title[lang]}"
         >
-          <menu-item>Control panel</menu-item>
+          <menu-item>${texts.menuItems[1].main}</menu-item>
         </a>
 
         <details>
           <summary>
-            <menu-item>Apps</menu-item>
+            <menu-item>${texts.menuItems[2].main}</menu-item>
           </summary>
 
           <ul>

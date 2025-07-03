@@ -1,5 +1,6 @@
 {
 	"name": "vorteapp",
+	"type": "module",
 	"version": "0.0.0",
 	"private": true,
 	"scripts": {
@@ -8,6 +9,7 @@
 	},
 	"devDependencies": {
 		"wrangler": "^4.23.0",
+		"cloudflare": "^4.4.1",
 		"esbuild": "^0.25.5"
 	}
 }
