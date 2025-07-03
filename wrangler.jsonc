@@ -8,10 +8,10 @@
 	"build": {
 		"cwd": ".",
 		"command": "node ./build.js",
-		"watch_dir": "."
+		"watch_dir": "src"
 	},
 	"assets": {
-		"directory": "./dist/client"
+		"directory": "dist/assets"
 	},
 	"observability": {
 		"enabled": true
