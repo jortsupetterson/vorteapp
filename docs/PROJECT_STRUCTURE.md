@@ -45,7 +45,10 @@ vorteapp
 |   |   |\main ?) Main-thread code development directory, used user-interface reletad logic.
 |   |   |   |
 |   |   |   |
-|   |   |   |\_modules ?) Main-threads logic modules
+|   |   |   |\_events ?) Main-threads event handling modules
+|   |   |   |
+|   |   |   |
+|   |   |   |\_modules ?) Main-threads top-level logic modules
 |   |   |   |   |
 |   |   |   |   |
 |   |   |   |   |\virtualization.js ?) Recursively makes the dom accessible via 
