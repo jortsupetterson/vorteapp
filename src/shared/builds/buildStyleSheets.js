@@ -1,4 +1,5 @@
 import { build } from 'esbuild';
+import emptyDir from './plugins/emptyDir.js';
 
 /**
  * Bundles CSS styles using esbuild with built-in CSS loading.
@@ -8,10 +9,12 @@ import { build } from 'esbuild';
  * @param {string} outDir
  * @returns {Promise<import('esbuild').BuildResult>}
  */
-export default async function buildStyleSheets(entry = [], outDir) {
+export default async function buildStyleSheets(entry = [], outDir = './dist/assets/styles') {
 	if (!Array.isArray(entry) || entry.length === 0 || typeof outDir !== 'string' || !outDir.trim()) {
 		throw new Error('buildStyles: entry must be non-empty array and outDir must be a non-empty string');
 	}
+
+	await emptyDir(outDir);
 
 	return build({
 		entryPoints: entry,

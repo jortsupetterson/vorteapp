@@ -20,17 +20,17 @@ export function renderLanding(lang, nonce, cookies, visibility = 'noindex') {
 		en: '/en',
 	};
 
+	//Always include a top level style sheet based on if its a Sales or Application page as well as a view specific stylesheet
 	const stylesheets = `
-    <link rel="stylesheet" href="/styles/landing.css">
+    <link rel="stylesheet" href="/styles/view-specific/landing/style.css">
     `;
 
 	const body = `
-    <body>
     ${renderHeroSection(lang)}
-    </body>
     `;
 
-	const page = serverSideRender(lang, nonce, cookies, stylesheets, title, description, urls, body);
+	const events = `<script type="module" src="/events/handleLandingEvents.js" defer></script>`;
+	const page = serverSideRender(lang, nonce, cookies, stylesheets, title, description, urls, body, events);
 
 	const headers = getPageResponseHeaders(lang, nonce, visibility);
 

@@ -4,7 +4,7 @@ import getTwitterCard from '../shared/getTwitterCard.js';
 import getSchemaLD from '../shared/getSchemaLD.js';
 import getPwa from './getPwa.js';
 
-export default function serverSideRender(lang, nonce, cookies, stylesheets, title, description, urls, body) {
+export default function serverSideRender(lang, nonce, cookies, stylesheets, title, description, urls, body, events) {
 	return `
     <!doctype html>
     <html 
@@ -22,10 +22,11 @@ export default function serverSideRender(lang, nonce, cookies, stylesheets, titl
     ${getSchemaLD(lang, nonce, title, description, urls)}
     ${getPwa(lang)}
     </head>
-    </head>
-
+    <body
     ${body}
-
+    ${events}
+    <script type="module" src="/scripts/app.js" defer></script>
+    </body>
     </html>
     `;
 }
