@@ -12,7 +12,7 @@
 import { build } from 'esbuild';
 import htmlMinifierPlugin from './plugins/htmlMinifierPlugin.js';
 
-export default async function buildMainThread(entry = './src/client/main/app.js', outDir = '/dist/storage/scripts') {
+export default async function buildMainThread(entry = './src/client/main/app.js', outDir = '/dist/assets/scripts') {
 	if (typeof entry !== 'string' || !entry.trim() || typeof outDir !== 'string' || !outDir.trim()) {
 		throw new Error('buildMainThread: both entry and outDir must be non-empty strings');
 	}

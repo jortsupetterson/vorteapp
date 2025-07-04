@@ -1,0 +1,139 @@
+form.login {
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    font-weight: 200;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 50%;
+    min-height: 50vh;
+    font-size: 2.5vh;
+    border: solid 0.25vh var(--primary-ghost);
+    border-radius: 1vh;
+    padding: 2vh;
+    gap: 2vh;}
+
+form.login header {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2.5vh;
+    margin-bottom: 2vh;
+    gap: 2vh;
+    min-width: 95%;}
+
+form.login div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position:relative;
+  min-width: 95%;}
+
+form.login header p {
+    font-family: 'Inter';
+    font-weight: 200;
+    font-size: 4vh;
+    transform: translate(0, 1vh);
+    text-align: left;
+    margin: 0;}
+  
+form.login header svg {
+  margin: 0;
+  padding: 0;
+  transform: translate(0,10%);
+  max-width: 4vh;
+  max-height: 8vh;}
+
+    form.login button {
+          will-change: transform;
+          transition: transform 0.2s;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          background: var(--secondary-ghost);
+          color: var(--text);
+          align-items: center;
+          border: none;
+          gap: 2vh;
+          padding: 2vh;
+          min-width: 70%;
+          font-size: 2vh;
+          border-radius: 1vh;
+          font-weight: 200;
+          font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;}
+
+    form.login button svg{
+      max-width: 3vh;
+      max-height: 3vh;
+      fill: var(--text);}
+
+
+form.login input[type=email],
+form.login input[type=text] {
+    background: var(--primary-ghost);
+    color: var(--text);
+    border: none;
+    border-radius: 1vh;
+    padding: 2vh;
+    min-width: 65%;
+    font-size: 2vh;
+    text-align: center;
+    font-weight: 100;}
+
+form.login input::placeholder {
+  color: var(--text);
+  opacity: 0.33;}
+
+form.login input::-webkit-input-placeholder {
+  color: var(--text);
+  opacity: 0.33;}
+
+form.login input::-moz-placeholder {
+  color: var(--text);
+  opacity: 0.33;}
+
+form.login input:-ms-input-placeholder,
+form.login input::-ms-input-placeholder {
+  color: var(--text);
+  opacity: 0.33;}
+
+form.login div#email-login {
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+  margin-top: 4vh;
+}
+
+
+form.login output {
+    min-height: 2vh;
+    min-width: 100%;
+    font-size: 2vh;
+    color: red;}
+
+/* ----------------------------------------
+   Portrait Orientation Overrides
+----------------------------------------- */
+@media (orientation: portrait) {
+  form.login {
+    min-width: 80%;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+    form.login button:hover,
+    form.login button:focus {
+        transform: scale(1.05);   
+        cursor: pointer;}
+
+    form.login a:hover,
+    form.login a:focus {
+    text-decoration: underline;
+    cursor: pointer;}}

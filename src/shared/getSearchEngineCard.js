@@ -18,9 +18,9 @@
  *     - alternate links for fi, sv, and en
  */
 export default function getSearchEngineCard(lang, title, description, urls) {
-  return `
+	return `
   <title>
-    ${title[lang]}
+    ${title[lang]} | Vorte
   </title>
 
   <meta
