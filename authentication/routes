@@ -1,0 +1,21 @@
+	"routes": [
+		"vorte.app/authn/*",
+		"vorte.app/fi/kirjaudu-sisään",
+		"vorte.app/kirjaudu-sisään",
+		"vorte.app/sv/logga-in",
+		"vorte.app/logga-in",
+		"vorte.app/en/sign-in",
+		"vorte.app/sign-in",
+		"vorte.app/fi/kirjaudu-sisään/",
+		"vorte.app/kirjaudu-sisään/",
+		"vorte.app/sv/logga-in/",
+		"vorte.app/logga-in/",
+		"vorte.app/en/sign-in/",
+		"vorte.app/sign-in/",
+		"vorte.app/fi/kirjaudu-sisään/*",
+		"vorte.app/kirjaudu-sisään/*",
+		"vorte.app/sv/logga-in/*",
+		"vorte.app/logga-in/*",
+		"vorte.app/en/sign-in/*",
+		"vorte.app/sign-in/*"
+	]

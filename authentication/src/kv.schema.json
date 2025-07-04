@@ -1,0 +1,19 @@
+# Käyttäjädokumentti (1. haku, strong consistency korkean prioriteetin datalle)
+user!{uid} → JSON:
+{
+  "uid": "{uid}",
+  "providers": {
+    "google": "{google_sub}",
+    "microsoft": "{microsoft_sub}",
+    "passkey": "{passkey_hash}"
+  },
+  "createdAt": "2025-06-10T12:34:56Z",
+  "metadata": { … }
+}
+
+# Alias → UID -kartoitus (1. haku, ohitetaan user! kun halutaan suoraan UID)
+alias!{provider}!{aliasId} → "{uid}"
+
+# Magic link -tokenit (TTL)
+magic!{token} → "{uid}"
+  (asetetaan TTL=15min, single-use eli poisto käytön jälkeen)
