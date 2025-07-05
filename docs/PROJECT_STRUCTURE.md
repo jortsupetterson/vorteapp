@@ -27,8 +27,11 @@ vorteapp
 |   |\_PROGRAM_FLOW.md ?) Visualization and explanation on how this software is intented to work.
 |   |
 |   |
-|   |\_PROJECT_STRUCTURE.md ?) Visualizes and explains project structure (CURRENT)
+|   |\_PROJECT_STRUCTURE.md ?) Visualizes and explains project structure. (CURRENT)
 |
+|
+|\_fi ?) Directory for static html files, meant mainly to make developing a bit easier not having to deal with the modular ssr.
+|               Live Server Extension combatible. Just make sure to place the actual style and script files to the actual Source Code
 |
 |\_node_modules ?) Directory for dependencies determined in package.json installed via "$ npm install".
 |

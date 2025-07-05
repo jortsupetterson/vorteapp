@@ -1,6 +1,6 @@
 import texts from '../i18n/getAppBannerTextContent.js';
 
-export default function renderAppBanner(lang, title) {
+export default function renderAppBanner(lang, title, cookies) {
 	return `
         <banner role="banner">
       <nav-button

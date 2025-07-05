@@ -11,14 +11,17 @@
 
 import { build } from 'esbuild';
 import htmlMinifierPlugin from './plugins/htmlMinifierPlugin.js';
+import emptyDir from './plugins/emptyDir.js';
 
-export default async function buildMainThread(entry = './src/client/main/app.js', outDir = '/dist/assets/scripts') {
-	if (typeof entry !== 'string' || !entry.trim() || typeof outDir !== 'string' || !outDir.trim()) {
-		throw new Error('buildMainThread: both entry and outDir must be non-empty strings');
+export default async function buildMainThread(entry = './src/client/main/app.js', outDir = './dist/assets/scripts') {
+	if (!Array.isArray(entry) || entry.length === 0 || typeof outDir !== 'string' || !outDir.trim()) {
+		throw new Error('buildMain: entry must be non-empty array and outDir must be a non-empty string');
 	}
 
+	await emptyDir(outDir);
+
 	return build({
-		entryPoints: [entry],
+		entryPoints: entry,
 		bundle: true,
 		platform: 'browser',
 		format: 'esm',
@@ -28,5 +31,6 @@ export default async function buildMainThread(entry = './src/client/main/app.js'
 		splitting: true,
 		outdir: outDir,
 		logLevel: 'info',
+		keepNames: true,
 	});
 }

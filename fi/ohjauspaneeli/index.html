@@ -1,0 +1,151 @@
+<!DOCTYPE html> <!--DONE-ALL EDITS SHOULD BE MADE IN THE ACTUAL SOURCE CODE-->
+<html lang="fi" data-theme="light" data-contrast="normal">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../../src/client/stylesheets/app-layout/app.css" />
+    <link rel="stylesheet" href="../../src/client/stylesheets/view-specific/dashboard/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ohjauspaneeli | Vorte</title>
+  </head>
+  <body>
+    <banner role="banner">
+      <nav-button
+        role="button"
+        title="Sovelluksen navigointi valikko"
+      >
+        <div></div>
+        <div></div>
+        <div></div>
+      </nav-button>
+
+      <location-indicator
+        role="status"
+        aria-live="polite"
+        aria-label="Nykyinen näkymä"
+      >
+        <!-- Replace page name -->
+        Ohjauspaneeli
+      </location-indicator>
+
+      <nav-dropdown role="menubar">
+
+
+          <menu-item
+          role="button"
+          title="Lisäää Vorte laitteesi aloitusnäytölle"
+          >Asenna Vorte laitteellesi</menu-item>
+
+        <menu-heading>MY VORTE</menu-heading>
+
+        <a
+          href="/fi/ohjauspaneeli"
+          hreflang="fi"
+          title="Siirry My Vorte ohjauspaneeliin"
+        >
+          <menu-item>Ohjauspaneeli</menu-item>
+        </a>
+
+        <details>
+          <summary>
+            <menu-item>Sovellukset</menu-item>
+          </summary>
+
+          <ul>
+            <li>
+              <a
+                href="/fi/my-vorte/polku-yrittäjäksi"
+                hreflang="fi"
+                title="Siirry polku yrittäjäksi sovellukseen"
+              >
+                <menu-sub-item>Polku yrittäjäksi</menu-item>
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="/fi/my-vorte"
+                hreflang="fi"
+                title="Siirry sivulle joka listaa tulevat My Vorte sovellukset"
+              >
+                <menu-sub-item>Tulossa...</menu-item>
+              </a>
+            </li>
+          </ul>
+        </details>
+
+        <menu-heading>VORTEPRENEUR</menu-heading>
+        <a
+          href="/fi/vortepreneur"
+          hreflang="fi"
+          title="Siirry sivulle joka listaa tulevat Vortepreneur sovellukset"
+        >
+          <menu-item>Tulossa...</menu-item>
+        </a>
+      </nav-dropdown>
+
+      <profile-button
+        role="button"
+        title="Profiili ja asetukset valikko"
+      >
+        <div></div>
+        <div></div>
+      </profile-button>
+
+      <profile-dropdown role="menubar">
+        <a
+          href="/fi/omat-asetukset"
+          hreflang="fi"
+          title="Siirry asetuksiisi"
+        >
+          <menu-item>Omat asetukset</menu-item>
+        </a>
+        <a
+          href="/fi/kirjaudu-ulos"
+          hreflang="fi"
+          title="Poista istunto tunniste eväste"
+        >
+          <menu-item>Kirjaudu ulos</menu-item>
+        </a>
+      </profile-dropdown>
+    </banner>
+
+    <shell class="toggled" role="main"> 
+        <header>
+        <layout-button role="button"title="Mukauta näkymää">
+        </layout-button>
+        </header>
+        <main></main>
+    </shell>
+
+ <sidebar class="toggled" role="menubar">
+      <header>
+        <hide-sidebar-button role="button"title="Piilota sivuvalikko">
+        </hide-sidebar-button>
+      </header>
+
+      <main>
+        <menu-heading>SOVELLUKSET:</menu-heading>
+
+        <a
+          href="/fi/my-vorte/polku-yrittäjäksi"
+          hreflang="fi"
+          title="Siirry polku yrittäjäksi sovellukseen"
+        >
+          <menu-item>Polku yrittäjäksi</menu-item>
+        </a>
+
+
+        <a
+          href="/fi/my-vorte"
+          hreflang="fi"
+          title="Siirry sivulle jossa on listattuna tulevat My Vorte sovellukset"
+        >
+          <menu-item>Tulossa...</menu-item>
+        </a>
+        </main>
+    </sidebar>
+
+    <script type="module" src="../../src/client/main/app.js" defer></script>
+    <script type="module" src="../../src/client/main/events/handleDashboardEvents.js" defer></script>
+  </body>
+</html>

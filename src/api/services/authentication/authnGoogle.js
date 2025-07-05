@@ -23,23 +23,23 @@
  *   - A 400 Bad Request response if `code_challenge` or `state` is missing.
  */
 export function requestAuthnViaGoogle(url, env) {
-  const challenge = url.searchParams.get("code_challenge");
-  const state     = url.searchParams.get("state");
+	const challenge = url.searchParams.get('code_challenge');
+	const state = url.searchParams.get('state');
 
-  if (!challenge || !state) {
-    return new Response("Missing code_challenge or state", { status: 400 });
-  }
+	if (!challenge || !state) {
+		return new Response('Missing code_challenge or state', { status: 400 });
+	}
 
-  const authUrl = new URL("https://accounts.google.com/o/oauth2/v2/auth");
-  authUrl.searchParams.set("client_id",             env.GOOGLE_CLIENT_ID);
-  authUrl.searchParams.set("redirect_uri",          env.AUTH_REDIRECT_URI);
-  authUrl.searchParams.set("response_type",         "code");
-  authUrl.searchParams.set("scope",                 "openid email profile");
-  authUrl.searchParams.set("code_challenge",        challenge);
-  authUrl.searchParams.set("code_challenge_method", "S256");
-  authUrl.searchParams.set("state",                 state);
+	const authUrl = new URL('https://accounts.google.com/o/oauth2/v2/auth');
+	authUrl.searchParams.set('client_id', env.GOOGLE_CLIENT_ID);
+	authUrl.searchParams.set('redirect_uri', env.AUTH_REDIRECT_URI);
+	authUrl.searchParams.set('response_type', 'code');
+	authUrl.searchParams.set('scope', 'openid email profile');
+	authUrl.searchParams.set('code_challenge', challenge);
+	authUrl.searchParams.set('code_challenge_method', 'S256');
+	authUrl.searchParams.set('state', state);
 
-  return Response.redirect(authUrl, 302);
+	return Response.redirect(authUrl, 302);
 }
 
 /**
@@ -66,26 +66,24 @@ export function requestAuthnViaGoogle(url, env) {
  *   - On failure: a 502 Bad Gateway Response with the error message.
  */
 export async function exchangeTokenWithGoogle(env, cookies, code) {
+	const clientSecret = await env.GOOGLE_OAUTH_CLIENT_SECRET.get();
 
-  const clientSecret = await env.GOOGLE_OAUTH_CLIENT_SECRET.get();
-
-  const params = new URLSearchParams({
-    code,
-    client_id:     env.GOOGLE_CLIENT_ID,
-    client_secret: clientSecret,
-    redirect_uri:  env.AUTH_REDIRECT_URI,
-    grant_type:    "authorization_code",
-    code_verifier: cookies.pkce_verifier
-  });
-  const tokenRes = await fetch("https://oauth2.googleapis.com/token", {
-    method:  "POST",
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body:    params
-  });
-  if (!tokenRes.ok) {
-    const msg = await tokenRes.text();
-    return new Response(`Token exchange failed: ${msg}`, { status: 502 });
-  }
-  return tokenRes;
+	const params = new URLSearchParams({
+		code,
+		client_id: env.GOOGLE_CLIENT_ID,
+		client_secret: clientSecret,
+		redirect_uri: env.AUTH_REDIRECT_URI,
+		grant_type: 'authorization_code',
+		code_verifier: cookies.pkce_verifier,
+	});
+	const tokenRes = await fetch('https://oauth2.googleapis.com/token', {
+		method: 'POST',
+		headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+		body: params,
+	});
+	if (!tokenRes.ok) {
+		const msg = await tokenRes.text();
+		return new Response(`Token exchange failed: ${msg}`, { status: 502 });
+	}
+	return tokenRes;
 }
-
