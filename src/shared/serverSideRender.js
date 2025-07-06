@@ -22,10 +22,10 @@ export default function serverSideRender(lang, nonce, cookies, stylesheets, titl
     ${getSchemaLD(lang, nonce, title, description, urls)}
     ${getPwa(lang)}
     </head>
-    <body
+    <body>
     ${body}
+        <script type="module" src="/scripts/app.js" defer></script>
     ${events}
-    <script type="module" src="/scripts/app.js" defer></script>
     </body>
     </html>
     `;

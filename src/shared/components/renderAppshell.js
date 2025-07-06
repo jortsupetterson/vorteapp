@@ -1,3 +1,5 @@
+
+
 export default function renderAppShell(lang, content = 'Add some content bruh :p') {
 	return `
 	<shell class="toggled" role="main">
@@ -11,10 +13,9 @@ export default function renderAppShell(lang, content = 'Add some content bruh :p
 								en: 'Adjust layout',
 							}[lang]
 						}"
-
             </layout-button>
 		</header>
 		<main>${content}</main>
-	</shell>;
+	</shell>
     `;
 }

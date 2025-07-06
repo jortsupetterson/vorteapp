@@ -61,7 +61,7 @@ export default function virtualize(root = document.body) {
 
 		// Extract attributes into a props object
 		const props = {};
-		element.attributes.forEach(({ name, value }) => {
+		Array.from(element.attributes).forEach(({ name, value }) => {
 			props[name] = value;
 		});
 

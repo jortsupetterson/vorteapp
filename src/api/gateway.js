@@ -66,6 +66,6 @@ export default {
 
 		// Dynamic import for pages router -> code-splitting on demand
 		const { forwardRequestToPagesRouter } = await import('./routers/pagesRouter.js');
-		return forwardRequestToPagesRouter(request, env, lang, segments);
+		return forwardRequestToPagesRouter(request, env, lang, segments, UI_PREFIXES);
 	},
 };

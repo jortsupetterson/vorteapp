@@ -1,0 +1,1 @@
+import{a as t}from"./chunk-EI7MMDWY.js";function e(){app.shell.header.layoutButton.addEventListener("click",()=>{app.shell.header.layoutButton.classList.toggle("toggled"),app.shell.classList.toggle("toggled"),app.sidebar.classList.toggle("toggled")})}t(e,"handleShellButtonAndLayoutEvents");export{e as default};

@@ -28,14 +28,17 @@ export function renderDashboard(lang, nonce, cookies, visibility = 'noindex') {
     `;
 
 	const body = `
-        ${renderAppBanner(lang)}
+        ${renderAppBanner(lang, title)}
         ${renderAppShell(lang)}
         ${renderAppSidebar(lang)}
     `;
-	const events = `<script type="module" src="/events/handleDashboardEvents.js" defer></script>`;
+	const events = `<script type="module" src="/scripts/events/handleDashboardEvents.js" defer></script>`;
 	const page = serverSideRender(lang, nonce, cookies, stylesheets, title, description, urls, body, events);
 
 	const headers = getPageResponseHeaders(lang, nonce, visibility);
 
-	return new Response(page, headers, { status: 200 });
+	return new Response(page, {
+		status: 200,
+		headers: headers,
+	});
 }

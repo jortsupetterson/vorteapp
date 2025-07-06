@@ -1,0 +1,1 @@
+import{a as e}from"./chunk-EI7MMDWY.js";function t(){app.sidebar.header.hideSidebarButton.addEventListener("click",()=>{app.sidebar.header.hideSidebarButton.classList.toggle("toggled"),app.shell.classList.toggle("toggled"),app.sidebar.classList.toggle("toggled")})}e(t,"handleSidebarButtonAndLayoutEvents");export{t as default};
